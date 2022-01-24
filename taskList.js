@@ -11,6 +11,10 @@ let tasks = [
     },
 ]
 
+/**
+ * Generate a new ID
+ * @returns {number}
+ */
 function generateIDForTasks(){
     let numGen = true;
     let idNum;
@@ -27,6 +31,10 @@ function generateIDForTasks(){
     return idNum;
 }
 
+/**
+ * Addes a new task to the list
+ * @param {string} taskName - Name of the task to be added
+ */
 function addTask(taskName){
     if(taskName != ''){
         let id = generateIDForTasks();
@@ -39,6 +47,10 @@ function addTask(taskName){
     }
 }
 
+/**
+ * Deletes the object whose id match the taskId
+ * @param {number} taskId - Id of the task object
+ */
 function deleteTask(taskId){
     tasks = tasks.filter((task)=>{
         if(task.id != taskId){
@@ -47,6 +59,10 @@ function deleteTask(taskId){
     });
 }
 
+/**
+ * Set the item's complete status as true
+ * @param {number} taskId - Id of the task object
+ */
 function completeTask(taskId){
     tasks = tasks.map(task=>{
         if(task.id == taskId){

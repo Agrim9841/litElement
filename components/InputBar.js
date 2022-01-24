@@ -46,11 +46,18 @@ const inputBarTemplate = () => {
 
     let text = "";
 
+    /**
+     * Handles Change in Input Field
+     * @param {object} e - Event Object
+     */
     let handleInputChange = (e) => {
         text = e.target.value;
     }
 
-    let addTaskHandler = () => {
+    /**
+     * Handles Click on Add Task Button
+     */
+    let handleAddTask = () => {
         addTask(text);
         text = "";
         document.querySelector("input").value = "";
@@ -63,7 +70,7 @@ const inputBarTemplate = () => {
                 <input @input=${e => handleInputChange(e)} .value=${text} style=${styleMap(styles.input)} type="text" placeholder="What to do?"/>
             </div>
             <button style=${styleMap(styles.addButton)}
-                @click=${addTaskHandler}>Add</button>
+                @click=${handleAddTask}>Add</button>
         </div>
     `;
 }

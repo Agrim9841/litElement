@@ -44,11 +44,17 @@ const CardTemplate = (taskItem) => {
 		},
     }
 
+	/**
+     * Handles Delete Task Event
+     */
     let handleDelete = () =>  {
         deleteTask(taskItem.id);
         render(CardListTemplate(tasks), document.querySelector("#cardContainer"));
     }
 
+	/**
+     * Handles Complete Task Event
+     */
     let handleComplete = ()=>{
         completeTask(taskItem.id);
         render(CardListTemplate(tasks), document.querySelector("#cardContainer"));
